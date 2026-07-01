@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+class Student {
+
+    String name;
+    int age;
+
+    void getData(String n, int a) {
+        name = n;
+        age = a;
+    }
+
+    void display() {
+        System.out.println("Student Name : " + name);
+        System.out.println("Student Age  : " + age);
+    }
+}
+
+class Result extends Student {
+
+    int mark;
+
+    void getMark(int m) {
+        mark = m;
+    }
+
+    void showResult() {
+        display();
+        System.out.println("Student Mark : " + mark);
+    }
+
+    public static void main(String args[]) {
+
+        Scanner sc = new Scanner(System.in);
+
+        Result obj = new Result();
+
+        System.out.print("Enter Name : ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter Age : ");
+        int age = sc.nextInt();
+
+        System.out.print("Enter Mark : ");
+        int mark = sc.nextInt();
+
+        obj.getData(name, age);
+        obj.getMark(mark);
+
+        System.out.println("\nStudent Details");
+        obj.showResult();
+
+        sc.close();
+    }
+}
